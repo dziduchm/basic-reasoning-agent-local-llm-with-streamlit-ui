@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "reflective-agent-app"
+version = "0.1.0"
+description = "Streamlit app for reflective reasoning agent"
+authors = ["mr_dzi"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^2.3.0"
+langchain = "^0.3.2"
+langgraph = "^0.6.8"  
+langchain-community = "^0.3.30"  
+langchain-ollama = "^0.3.9"  
+pydantic = "2.11.9"  
+pytest = "8.4.2"  
+numpy = "2.3.3"  
+pandas = "2.3.3"  
+jupyterlab = "4.4.9"  
+streamlit = "^1.50.0"
+ddgs = "^9.6.0"
+beautifulsoup4 = "^4.14.2"
+httpx = "^0.28.1"
+langchain-openai = "^0.3.35"
+langchain-xai = "^0.2.5"
+pyyaml = "^6.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.0.0"
+flake8 = "^7.0.0"
+pytest-cov = "^5.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

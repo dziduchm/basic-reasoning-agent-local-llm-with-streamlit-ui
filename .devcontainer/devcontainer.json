@@ -1,0 +1,26 @@
+{
+  "name": "Local QA Agentic App",
+  "dockerFile": "Dockerfile",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", 
+      "ms-vscode-remote.remote-containers",
+      "yzhang.markdown-all-in-one",
+      "ClemensPeters.format-json",
+      "GitHub.github-vscode-theme"],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true
+      }
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/documents,target=/app/documents,type=bind,consistency=cached"
+  ],
+  "remoteUser": "root",
+  "postCreateCommand": "poetry lock && poetry install --no-root"
+}
