@@ -38,8 +38,6 @@ graph TD
     G --> H[Update Memory]
 ```
 
-For more details, see [docs/api.md](docs/api.md).
-
 ## Installation
 
 ### Prerequisites

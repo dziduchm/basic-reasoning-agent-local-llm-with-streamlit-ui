@@ -6,7 +6,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python", 
+      "extensions": ["ms-python.python",
       "ms-vscode-remote.remote-containers",
       "yzhang.markdown-all-in-one",
       "ClemensPeters.format-json",

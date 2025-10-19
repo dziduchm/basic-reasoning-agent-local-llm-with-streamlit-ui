@@ -63,7 +63,9 @@ if user_input:
         full_response = [""]  # Use a list to make it mutable across scopes
 
         async def run_agent():
-            async for event in agent.ainvoke(context, st.session_state.messages):
+            async for event in agent.ainvoke(
+                context, st.session_state.messages
+            ):
                 if event["event"] == "on_chat_model_stream":
                     chunk = event["data"]["chunk"].content
                     full_response[0] += chunk
@@ -73,4 +75,6 @@ if user_input:
         response_placeholder.markdown(full_response[0])
 
     # Append assistant response to memory
-    st.session_state.messages.append({"role": "assistant", "content": full_response[0]})
+    st.session_state.messages.append(
+        {"role": "assistant", "content": full_response[0]}
+    )

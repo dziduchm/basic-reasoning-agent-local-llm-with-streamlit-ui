@@ -30,20 +30,29 @@ class ReflectionAgent:
         # Node: Generate initial response
         def generate(state: State) -> dict:
             prompt = ChatPromptTemplate.from_template(
-                "System: You are a reflective reasoning agent. Use context and previous messages to respond. "
-                "If needed, perform searches or fetches.\n\n{context}\n\nMessages: {messages}"
+                "System: You are a reflective reasoning agent. Use context and\
+                     previous messages to respond. "
+                "If needed, perform searches or fetches.\n\n{context}\n\n\
+                    Messages: {messages}"
             )
             chain = prompt | self.llm
             response = chain.invoke(
                 {"context": state["context"], "messages": state["messages"]}
             )
-            new_messages = state["messages"] + [AIMessage(content=response.content)]
-            return {"messages": new_messages, "iteration": state["iteration"] + 1}
+            new_messages = state["messages"] + [
+                AIMessage(content=response.content)
+            ]
+            return {
+                "messages": new_messages,
+                "iteration": state["iteration"] + 1,
+            }
 
         # Node: Critique and reflect
         def critique(state: State) -> dict:
             prompt = ChatPromptTemplate.from_template(
-                "Critique the latest response for accuracy and completeness. If 'good', respond 'satisfactory'; else, provide feedback.\n\nResponse: {response}"
+                "Critique the latest response for accuracy and completeness. \
+                    If 'good', respond 'satisfactory'; else, provide \
+                        feedback.\n\nResponse: {response}"
             )
             last_msg = state["messages"][-1].content
             chain = prompt | self.llm
@@ -82,6 +91,12 @@ class ReflectionAgent:
             )
             for m in messages
         ]
-        initial_state = {"messages": lc_messages, "context": context, "iteration": 0}
-        async for event in self.graph.astream_events(initial_state, version="v2"):
+        initial_state = {
+            "messages": lc_messages,
+            "context": context,
+            "iteration": 0,
+        }
+        async for event in self.graph.astream_events(
+            initial_state, version="v2"
+        ):
             yield event
