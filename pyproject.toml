@@ -23,7 +23,7 @@ httpx = "^0.28.1"
 langchain-openai = "^0.3.35"
 langchain-xai = "^0.2.5"
 pyyaml = "^6.0.0"
-pre-commit = "^6.0.0"
+pre-commit = "^4.3.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.0.0"

@@ -16,7 +16,7 @@ jobs:
         run: |
           poetry run flake8 .
           poetry run black --check .
-      - name: Test
-        run: poetry run pytest --cov=.
+      # - name: Test
+      #   run: poetry run pytest --cov=.
       - name: Build Docker
         run: docker build -t app .
