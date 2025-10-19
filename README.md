@@ -1,7 +1,7 @@
-[![Python Version](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/downloads/)
-[![Build Status](https://github.com/dziduchm/basic-reasoning-agent-local-llm-with-streamlit-ui/workflows/ci.yml/badge.svg)](https://github.com/dziduchm/basic-reasoning-agent-local-llm-with-streamlit-ui/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.38.0-orange.svg)](https://streamlit.io/)
+[<image-card alt="Python Version" src="https://img.shields.io/badge/python-3.12%2B-blue.svg" ></image-card>](https://www.python.org/downloads/)
+[<image-card alt="Build Status" src="https://github.com/dziduchm/basic-reasoning-agent-local-llm-with-streamlit-ui/actions/workflows/ci.yml/badge.svg" ></image-card>](https://github.com/dziduchm/basic-reasoning-agent-local-llm-with-streamlit-ui/actions/workflows/ci.yml)
+[<image-card alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" ></image-card>](https://opensource.org/licenses/MIT)
+[<image-card alt="Streamlit" src="https://img.shields.io/badge/Streamlit-1.38.0-orange.svg" ></image-card>](https://streamlit.io/)
 
 # Reflective Reasoning Agent
 
