@@ -1,21 +1,33 @@
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bullseye
 
 # Install dependencies
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Poetry as root and ensure permissions
+# Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 - \
-    && chmod +x /root/.local/bin/poetry \
     && ln -s /root/.local/bin/poetry /usr/local/bin/poetry
 
-# Set PATH and PYTHONPATH for all users
-ENV PATH="/root/.local/bin:/usr/local/bin:$PATH"
-ENV PYTHONPATH="/app:$PYTHONPATH"
+# Set working directory
+WORKDIR /app
 
-# Configure Poetry to install dependencies globally (no virtualenv)
+# Copy Poetry configuration files
+COPY pyproject.toml poetry.lock ./
+
+# Configure Poetry and install dependencies globally (no virtualenv)
 RUN poetry config virtualenvs.create false \
-    && poetry lock \
     && poetry install --no-root
 
-# Set working directory before copying files
-WORKDIR /app
+# Copy the rest of the application code
+COPY . .
+
+# Set environment variables
+ENV PYTHONPATH="/app:$PYTHONPATH"
+ENV PORT=8501
+
+# Expose the Streamlit port
+EXPOSE 8501
+
+# Command to run the Streamlit app
+CMD ["poetry", "run", "streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
