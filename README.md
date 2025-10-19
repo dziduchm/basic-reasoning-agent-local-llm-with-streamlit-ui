@@ -1,5 +1,5 @@
 [![Python Version](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/downloads/)
-[![Build Status](https://github.com/yourusername/reflective-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/reflective-agent/actions)
+[![Build Status](https://github.com/dziduchm/basic-reasoning-agent-local-llm-with-streamlit-ui/workflows/ci.yml/badge.svg)](https://github.com/dziduchm/basic-reasoning-agent-local-llm-with-streamlit-ui/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.38.0-orange.svg)](https://streamlit.io/)
 
@@ -146,7 +146,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact/Support
 
-- **Repository**: [https://github.com/yourusername/reflective-agent](https://github.com/yourusername/reflective-agent)
+- **Repository**: [https://github.com/yourusername/basic-reasoning-agent-local-llm-with-streamlit-ui](https://github.com/dziduchm/basic-reasoning-agent-local-llm-with-streamlit-ui.git)
 - **Issues**: Report bugs or request features via GitHub Issues.
 - **Discussions**: Use GitHub Discussions for questions.
 - **Author**: Your Name (your.email@example.com)
